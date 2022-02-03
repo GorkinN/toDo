@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CurrentTasksTable from './currentTasksTable/currentTasksTable';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <CurrentTasksTable />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
