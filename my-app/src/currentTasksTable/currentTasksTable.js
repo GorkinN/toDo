@@ -10,43 +10,22 @@ export default class CurrentTasksTable extends React.Component {
                     <th className="currentTasksTable__head-cell">Date of creation</th>
                     <th className="currentTasksTable__head-cell">Task</th>
                     <th className="currentTasksTable__head-cell">Deadline</th>
-                    <th className="currentTasksTable__head-cell">Check</th>
                     <th className="currentTasksTable__head-cell">Execution</th>
-
                 </tr>
                 <tr className="currentTasksTable__row">
                     <td className="currentTasksTable__cell">Date of creation</td>
                     <td className="currentTasksTable__cell_task-text">Tassdsdk</td>
                     <td className="currentTasksTable__cell">Deadline</td>
-                    <td className="currentTasksTable__cell">Check</td>
                     <td className="currentTasksTable__cell">
-                        <button className="execution-button">
-                            
-                        </button>
+                        <button className="execution-button"></button>
                     </td>
                 </tr>
-                <tr className="currentTasksTable__row">
-                    <td className="currentTasksTable__cell">Date of creation</td>
-                    <td className="currentTasksTable__cell_task-text">Tassdsdk</td>
-                    <td className="currentTasksTable__cell">Deadline</td>
-                    <td className="currentTasksTable__cell">Check</td>
-                    <td className="currentTasksTable__cell">
-                        <button className="execution-button">
-                            X
-                        </button>
+                <tr>
+                    <td className='add-task-cell' colSpan="4">
+                        <button className='add-task-button' >Add new task</button>
                     </td>
                 </tr>
-                <tr className="currentTasksTable__row">
-                    <td className="currentTasksTable__cell">Date of creation</td>
-                    <td className="currentTasksTable__cell_task-text">Tassdsdk</td>
-                    <td className="currentTasksTable__cell">Deadline</td>
-                    <td className="currentTasksTable__cell">Check</td>
-                    <td className="currentTasksTable__cell">
-                        <button className="execution-button">
-                            X
-                        </button>
-                    </td>
-                </tr>
+                
             </table>
         );
     }
