@@ -21,7 +21,7 @@ export default class CurrentTasksTable extends React.Component {
                     <td className="currentTasksTable__cell">Check</td>
                     <td className="currentTasksTable__cell">
                         <button className="execution-button">
-                            X
+                            
                         </button>
                     </td>
                 </tr>
