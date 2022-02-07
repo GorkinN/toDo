@@ -11,8 +11,6 @@ ReactDOM.render(
     <App />
     <CurrentTasksTable />
     <NewTaskMenu />
-
-
   </React.StrictMode>,
   document.getElementById('root')
 );

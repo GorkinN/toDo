@@ -16,6 +16,7 @@ textarea:focus {
     overflow: hidden;
     border-radius:10px;
     box-shadow: 0 0 3px 0 black;
+    display:none;
 }
 .new-task-menu__form-caption {
     font-size: 1.3rem;
@@ -81,6 +82,10 @@ textarea:focus {
     border-radius: 10px;
     cursor:pointer;
     box-shadow: 0 0 3px 0 black;
+    margin-right:15px;
+}
+.new-task-menu__submit-button:nth-last-child(1) {
+    margin-right:0;
 }
 .new-task-menu__submit-button:active {
     background: lighten(@table-base-color, 30%);

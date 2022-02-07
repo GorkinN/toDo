@@ -10,8 +10,8 @@ export default class AddTaskButton extends React.Component {
     showNewTaskMenu () {
         console.log("click" + this);
         document.querySelector(".new-task-menu").style.display = "block";
-        //let newTaskTextrea = document.getElementById("newTaskText");
-        //newTaskTextrea.focus();
+        let newTaskTextrea = document.getElementById("newTaskText");
+        newTaskTextrea.focus();
         
     }
     
