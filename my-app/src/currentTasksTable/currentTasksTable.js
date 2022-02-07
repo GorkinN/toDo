@@ -1,8 +1,7 @@
 import React from 'react';
 import "./currentTasksTable.css";
 import AddTaskButton from './AddTaskButton/addTaskButton.js';
-
-import CurrentTask from './currentTask/currentTask.js';
+import {CurrentTask} from './currentTask/currentTask.js';
 
 export default class CurrentTasksTable extends React.Component {
     render() {

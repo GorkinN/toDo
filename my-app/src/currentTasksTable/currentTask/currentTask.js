@@ -1,6 +1,8 @@
 import React from "react";
 import "./currentTask.css";
-export default class CurrentTask extends React.Component {
+import {taskList} from "../AddTaskButton/newTaskMenu/newTaskMenu.js";
+console.log(taskList);
+class CurrentTask extends React.Component {
     render(props) {
         return (
             <tr className="currentTasksTable__row">
@@ -20,3 +22,4 @@ export default class CurrentTask extends React.Component {
         );
     }
 }
+export {CurrentTask};
