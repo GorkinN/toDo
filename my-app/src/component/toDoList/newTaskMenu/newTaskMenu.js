@@ -42,9 +42,7 @@ class NewTaskMenu extends React.Component {
     } 
     onSubmit(event) {
         event.preventDefault();
-        taskList.push(this.makeNewTaskObj());
-        taskListID++;
-        console.log("taskList", taskList);
+        this.props.onSubmitNewTask();
         this.resetNewTaskMenu();
     }
     
