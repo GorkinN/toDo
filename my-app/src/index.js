@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CurrentTasksTable from './currentTasksTable/currentTasksTable';
-import NewTaskMenu from "./currentTasksTable/AddTaskButton/newTaskMenu/newTaskMenu.js"
+
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <CurrentTasksTable />
-    <NewTaskMenu />
   </React.StrictMode>,
   document.getElementById('root')
 );
