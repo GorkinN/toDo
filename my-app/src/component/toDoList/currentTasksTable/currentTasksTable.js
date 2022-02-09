@@ -1,9 +1,9 @@
 import React from 'react';
 import "./currentTasksTable.css";
-import { AddTaskButton } from "../addTaskButton/addTaskButton" ;
 import {CurrentTask} from "../currentTask/currentTask.js";
 
 class CurrentTasksTable extends React.Component {
+    
     render() {
         let date = new Date();
         return (
@@ -17,11 +17,6 @@ class CurrentTasksTable extends React.Component {
                             <th className="currentTasksTable__head-cell">Execution</th>
                         </tr>
                         <CurrentTask dateOfCreation={date.toLocaleDateString()} taskText="taskText" deadline="deadline"/>
-                        <tr>
-                            <td className='add-task-cell' colSpan="4">
-                                <AddTaskButton />
-                            </td>
-                        </tr>
                     </tbody>   
             </table>
         );

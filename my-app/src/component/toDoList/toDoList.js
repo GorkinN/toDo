@@ -1,22 +1,25 @@
 import React from 'react';
 import {CurrentTasksTable} from "./currentTasksTable/currentTasksTable.js";
-import {NewTaskMenu} from "./newTaskMenu/newTaskMenu.js";
+import {NewTaskContainer} from "./newTaskContainer/newTaskContainer.js";
 class ToDoList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            taskList:[{"fddf":2}, {"fddf":2}],
+            taskList:[],
             taskId:0,
             isNewTaskMenuVisible: false,
         };
         this.onSubmitNewTask = this.onSubmitNewTask.bind(this);
     }
+ 
+
     onSubmitNewTask() {
+        console.log("onSubmitNewTask");
         let newTask = this.makeNewTaskObj();
         this.setState((prevState) => {
                 return ({
                     //taskList : [...prevState.taskList, newTask],
-                    taskId : prevState.taskId + 1 
+                    //taskId : prevState.taskId + 1 
                 });
             });
     }
@@ -36,10 +39,9 @@ class ToDoList extends React.Component {
         return (
             <div>
                 <CurrentTasksTable/>
-                <NewTaskMenu onSubmitNewTask={this.onSubmitNewTask}/>
+                <NewTaskContainer onSubmitNewTask={this.onSubmitNewTask}/>
                 <div>id={this.state.taskId}</div>
                 <div>tsklist={this.state.taskList}</div>
-
             </div>
         );
     }

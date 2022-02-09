@@ -1,9 +1,10 @@
 @table-base-color: rgb(0, 79, 159);
 @font-size-base:1.1rem;
+@max-width-task-cell:200px;
 .currentTasksTable {
     box-shadow: 0 0 3px black;
     border-collapse: collapse;
-    margin:20px;
+    margin:10px;
     border-radius: 10px;
     background-color: @table-base-color;
     overflow:hidden;
@@ -20,7 +21,7 @@
 .currentTasksTable__cell_task-text {
     border:1px dotted white;
     padding: 5px;
-    max-width: 100px;
+    max-width: @max-width-task-cell;
     text-align:center;
     vertical-align: center;
     text-align:left;
@@ -28,7 +29,7 @@
 .currentTasksTable__head-cell {
     border:1px dotted white;
     padding: 5px;
-    max-width: 100px;
+    max-width: @max-width-task-cell;
     text-align:center;
     vertical-align: center;
     font-size: 1.2rem;

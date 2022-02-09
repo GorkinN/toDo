@@ -4,20 +4,14 @@ import "./addTaskButton.css";
 class AddTaskButton extends React.Component {
     constructor(props) {
         super(props);
-        this.showNewTaskMenu=this.showNewTaskMenu.bind(this);
+        this.handleClick=this.handleClick.bind(this);
     }
-    
-    showNewTaskMenu () {
-        console.log("click" + this);
-        document.querySelector(".new-task-menu").style.display = "block";
-        let newTaskTextrea = document.getElementById("newTaskText");
-        newTaskTextrea.focus();
-        
+    handleClick() {
+        this.props.newTaskMenuVisibility();
     }
-    
     render() {
         return (
-        <button className='add-task-button' onClick = {this.showNewTaskMenu}>
+        <button className='add-task-button' onClick = {this.handleClick}>
             Add new task
         </button>
         );

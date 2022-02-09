@@ -1,4 +1,5 @@
-@import "../../currentTasksTable.less";
+//import for @table-base-color
+@import "../currentTasksTable/currentTasksTable.less";
 p {
     margin:0;
     padding:0;
@@ -8,15 +9,14 @@ textarea:focus {
     outline:none;
 }
 .new-task-menu {
+    position:absolute;
+    top:0;
     background-color: @table-base-color;
     max-width:400px;
-    margin:10px 20px;
-    
     padding:5px 10px;
     overflow: hidden;
     border-radius:10px;
     box-shadow: 0 0 3px 0 black;
-    display:none;
 }
 .new-task-menu__form-caption {
     font-size: 1.3rem;
@@ -54,6 +54,7 @@ textarea:focus {
     font-size:1.1rem;
     color: @table-base-color;
     font-weight: 600;
+    cursor:pointer;
 }
 
 .new-task-menu__task-text {
@@ -71,7 +72,7 @@ textarea:focus {
     background-color:lighten(@table-base-color, 70%);
     outline:2px dotted lighten(@table-base-color, 20%);
 }
-.new-task-menu__submit-button {
+.new-task-menu__button {
     width: 100%;
     height:2rem;
     font-size: 1.2rem;
@@ -84,12 +85,16 @@ textarea:focus {
     box-shadow: 0 0 3px 0 black;
     margin-right:15px;
 }
-.new-task-menu__submit-button:nth-last-child(1) {
+.new-task-menu__button:nth-last-child(1) {
     margin-right:0;
 }
-.new-task-menu__submit-button:active {
+.new-task-menu__button:active {
     background: lighten(@table-base-color, 30%);
     box-shadow: 0 0 3px 0 white,
                 inset 0 0 3px 0 black;
     color:white;
+}
+
+.new-task-menu__button:hover {
+    box-shadow: inset 0 0 3px 0 black;
 }

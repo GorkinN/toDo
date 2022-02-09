@@ -1,7 +1,7 @@
 .currentTasksTable {
   box-shadow: 0 0 3px black;
   border-collapse: collapse;
-  margin: 20px;
+  margin: 10px;
   border-radius: 10px;
   background-color: #004f9f;
   overflow: hidden;
@@ -18,7 +18,7 @@
 .currentTasksTable__cell_task-text {
   border: 1px dotted white;
   padding: 5px;
-  max-width: 100px;
+  max-width: 200px;
   text-align: center;
   vertical-align: center;
   text-align: left;
@@ -26,7 +26,7 @@
 .currentTasksTable__head-cell {
   border: 1px dotted white;
   padding: 5px;
-  max-width: 100px;
+  max-width: 200px;
   text-align: center;
   vertical-align: center;
   font-size: 1.2rem;
