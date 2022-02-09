@@ -15,11 +15,12 @@ class ToDoList extends React.Component {
 
     onSubmitNewTask() {
         console.log("onSubmitNewTask");
-        let newTask = this.makeNewTaskObj();
+        let newTask = JSON.stringify(this.makeNewTaskObj());
+        console.log("newTask", newTask);
         this.setState((prevState) => {
                 return ({
-                    //taskList : [...prevState.taskList, newTask],
-                    //taskId : prevState.taskId + 1 
+                    taskList : [...prevState.taskList, newTask],
+                    taskId : prevState.taskId + 1 
                 });
             });
     }
