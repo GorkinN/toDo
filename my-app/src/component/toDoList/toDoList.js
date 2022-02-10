@@ -28,18 +28,17 @@ class ToDoList extends React.Component {
         let newTaskText = document.getElementById("newTaskText");
         let newTaskDeadline = document.getElementById("newTaskDeadline");
         let currentTime = new Date();
-        let taskId = this.state.taskId;
-        return ({
-            dateOfCreation: currentTime.toLocaleDateString(),
-            taskText: newTaskText.value,
-            deadline: newTaskDeadline.value,
-            id:taskId,
-        });        
+        return {
+            dateOfCreation : currentTime.toLocaleDateString(),
+            taskText : newTaskText.value,
+            deadline : newTaskDeadline.value,
+            id : this.state.taskId
+        };        
     }
     render () {
         return (
             <div>
-                <CurrentTasksTable/>
+                <CurrentTasksTable tasksArray={this.state.taskList}/>
                 <NewTaskContainer onSubmitNewTask={this.onSubmitNewTask}/>
                 <div>id={this.state.taskId}</div>
                 <div>tsklist={this.state.taskList}</div>

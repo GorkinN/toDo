@@ -1,11 +1,31 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import "./currentTasksTable.css";
 import {CurrentTask} from "../currentTask/currentTask.js";
 
 class CurrentTasksTable extends React.Component {
     
+    showCurrentTasks(tasksArrayJSON) {
+        if (!tasksArrayJSON.length) {return;}
+        let taskList = tasksArrayJSON.map((item) => {
+            return JSON.parse(item);
+        });
+        let taskListItems = taskList.map((item)=>(
+            <CurrentTask 
+            key={item.id} 
+            dateOfCreation={item.dateOfCreation} 
+            taskText={item.taskText} 
+            deadline={item.deadline}/>
+        ));
+        return (
+            <Fragment>
+                {taskListItems}
+            </Fragment>
+            
+            );       
+    };
+
     render() {
-        let date = new Date();
+        console.log("this.props.tasksArray",this.props.tasksArray);
         return (
             <table className="currentTasksTable">
                 <caption className="tableCaption">List of current tasks</caption>
@@ -16,7 +36,21 @@ class CurrentTasksTable extends React.Component {
                             <th className="currentTasksTable__head-cell">Deadline</th>
                             <th className="currentTasksTable__head-cell">Execution</th>
                         </tr>
-                        <CurrentTask dateOfCreation={date.toLocaleDateString()} taskText="taskText" deadline="deadline"/>
+                        {this.showCurrentTasks(this.props.tasksArray)}
+                       
+                        <CurrentTask 
+            dateOfCreation="12.12.12" 
+            taskText="{item.taskTexfffffffffffffffff dfdfdfdfs sdfsdfsdfddddddddddddddddddt}" 
+            deadline="{item.deadline}"/>
+                    <CurrentTask 
+            dateOfCreation="12.12.12" 
+            taskText="{item.taskText}" 
+            deadline="{item.deadline}"/>
+                    <CurrentTask 
+            dateOfCreation="12.12.12" 
+            taskText="{item.taskText}" 
+            deadline="{item.deadline}"/>
+         
                     </tbody>   
             </table>
         );
