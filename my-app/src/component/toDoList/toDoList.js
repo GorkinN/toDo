@@ -40,8 +40,6 @@ class ToDoList extends React.Component {
             <div>
                 <CurrentTasksTable tasksArray={this.state.taskList}/>
                 <NewTaskContainer onSubmitNewTask={this.onSubmitNewTask}/>
-                <div>id={this.state.taskId}</div>
-                <div>tsklist={this.state.taskList}</div>
             </div>
         );
     }

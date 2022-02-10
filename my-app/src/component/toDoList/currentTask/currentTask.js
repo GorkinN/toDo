@@ -2,14 +2,14 @@ import React from "react";
 import "./currentTask.css";
 
 class CurrentTask extends React.Component {
-    render(props) {
+    render() {
         return (
             <tr className="currentTasksTable__row">
                     <td className="currentTasksTable__cell">
                         {this.props.dateOfCreation}
                     </td>
                     <td className="currentTasksTable__cell_task-text">
-                         {this.props.taskText} 
+                        {this.props.taskText}
                     </td>
                     <td className="currentTasksTable__cell">
                         {this.props.deadline}

@@ -15,18 +15,9 @@
 .currentTasksTable__head .currentTasksTable__head-cell:nth-last-child(1) {
   border-right: none;
 }
-.currentTasksTable__cell_task-text {
-  border: 1px dotted white;
-  padding: 5px;
-  max-width: 200px;
-  text-align: center;
-  vertical-align: center;
-  text-align: left;
-}
 .currentTasksTable__head-cell {
   border: 1px dotted white;
   padding: 5px;
-  max-width: 200px;
   text-align: center;
   vertical-align: center;
   font-size: 1.2rem;
@@ -38,9 +29,6 @@
   font-size: 1.5rem;
   font-weight: 800;
   color: #004f9f;
-}
-.add-task-cell {
-  border-radius: 10px;
 }
 .add-task-button {
   position: relative;

@@ -37,20 +37,6 @@ class CurrentTasksTable extends React.Component {
                             <th className="currentTasksTable__head-cell">Execution</th>
                         </tr>
                         {this.showCurrentTasks(this.props.tasksArray)}
-                       
-                        <CurrentTask 
-            dateOfCreation="12.12.12" 
-            taskText="{item.taskTexfffffffffffffffff dfdfdfdfs sdfsdfsdfddddddddddddddddddt}" 
-            deadline="{item.deadline}"/>
-                    <CurrentTask 
-            dateOfCreation="12.12.12" 
-            taskText="{item.taskText}" 
-            deadline="{item.deadline}"/>
-                    <CurrentTask 
-            dateOfCreation="12.12.12" 
-            taskText="{item.taskText}" 
-            deadline="{item.deadline}"/>
-         
                     </tbody>   
             </table>
         );

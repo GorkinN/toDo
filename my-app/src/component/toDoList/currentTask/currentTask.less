@@ -21,16 +21,14 @@
     border:1px dotted white;
     padding: 5px;
     font-size: 1.1rem;
-    //max-width: 100px;
     text-align:center;
     vertical-align: center;
 }
 .currentTasksTable__cell_task-text {
     .currentTasksTable__cell;
     text-align:left;
-    text-overflow: ellipsis;
-
-
+    overflow-wrap: break-word;
+    min-width: 300px;
 }
 .execution-button {
     position: relative;
@@ -50,7 +48,6 @@
     color:rgb(117, 0, 0);
     transform:rotate(45deg);
 }
-
 .execution-button:after {
     content: "";
     position:absolute;
@@ -80,8 +77,4 @@
 }
 .execution-button:hover:before {
     display: none;
-}
-
-.add-task-cell {
-    border-radius:10px;
 }

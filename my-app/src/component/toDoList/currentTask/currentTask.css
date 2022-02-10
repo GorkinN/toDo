@@ -15,15 +15,6 @@
 .currentTasksTable__head .currentTasksTable__head-cell:nth-last-child(1) {
   border-right: none;
 }
-/*
-.currentTasksTable__cell_task-text {
-    border:1px dotted white;
-    padding: 5px;
-    text-align:center;
-    vertical-align: center;
-    text-align:left;
-}
-*/
 .currentTasksTable__head-cell {
   border: 1px dotted white;
   padding: 5px;
@@ -38,9 +29,6 @@
   font-size: 1.5rem;
   font-weight: 800;
   color: #004f9f;
-}
-.add-task-cell {
-  border-radius: 10px;
 }
 .currentTasksTable__row .currentTasksTable__cell:nth-child(1) {
   border-left: none;
@@ -72,7 +60,8 @@
   text-align: center;
   vertical-align: center;
   text-align: left;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  min-width: 300px;
 }
 .execution-button {
   position: relative;
@@ -121,7 +110,4 @@
 }
 .execution-button:hover:before {
   display: none;
-}
-.add-task-cell {
-  border-radius: 10px;
 }
