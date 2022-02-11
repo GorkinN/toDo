@@ -38,7 +38,7 @@ class ToDoList extends React.Component {
     }
     render () {
         let noTasksMessage = (!this.state.taskList.length)? 
-        <p className='noTasksMessage'>There is no task yet...<br/> 
+        <p className='noTasksMessage'>There are no tasks yet...<br/> 
         Push the button "Add new task" to make the first one
         </p> :null;
         return (
