@@ -1,6 +1,7 @@
 import React from 'react';
 import {CurrentTasksTable} from "./currentTasksTable/currentTasksTable.js";
 import {NewTaskContainer} from "./newTaskContainer/newTaskContainer.js";
+import "./toDoList.css";
 class ToDoList extends React.Component {
     constructor(props) {
         super(props);
@@ -36,9 +37,14 @@ class ToDoList extends React.Component {
         };        
     }
     render () {
+        let noTasksMessage = (!this.state.taskList.length)? 
+        <p className='noTasksMessage'>There's no tasks yet...<br/> 
+        Push the button "Add new task" to make the first one
+        </p> :null;
         return (
             <div>
                 <CurrentTasksTable tasksArray={this.state.taskList}/>
+                {noTasksMessage}                
                 <NewTaskContainer onSubmitNewTask={this.onSubmitNewTask}/>
             </div>
         );
