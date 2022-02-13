@@ -2,6 +2,7 @@ import React from 'react';
 import {CurrentTasksTable} from "./currentTasksTable/currentTasksTable.js";
 import {NewTaskContainer} from "./newTaskContainer/newTaskContainer.js";
 import "./toDoList.css";
+
 class ToDoList extends React.Component {
     constructor(props) {
         super(props);
@@ -11,9 +12,26 @@ class ToDoList extends React.Component {
             isNewTaskMenuVisible: false,
         };
         this.onSubmitNewTask = this.onSubmitNewTask.bind(this);
+        this.onClickDeleteTask = this.onClickDeleteTask.bind(this);
     }
- 
-
+    onClickDeleteTask(idToDelete){
+        let currentTaskList = this.state.taskList.map(item=>(JSON.parse(item)));
+        console.log("currentTaskList: ",currentTaskList);
+        console.log(idToDelete);
+        for (let i=0; i<currentTaskList.length; i++) {
+            console.log("currentTaskList[i].id",currentTaskList[i].id);
+            console.log("cond:",currentTaskList[i].id === idToDelete);
+            if (currentTaskList[i].id === idToDelete) {
+                currentTaskList.splice(i, 1);
+                break;
+            }
+        }
+        console.log("final taskList: ", currentTaskList);
+        currentTaskList = currentTaskList.map(item=>JSON.stringify(item));
+        this.setState({
+            taskList:currentTaskList
+        });
+    }
     onSubmitNewTask() {
         console.log("onSubmitNewTask");
         let newTask = JSON.stringify(this.makeNewTaskObj());
@@ -43,7 +61,7 @@ class ToDoList extends React.Component {
         </p> :null;
         return (
             <div>
-                <CurrentTasksTable tasksArray={this.state.taskList}/>
+                <CurrentTasksTable tasksArray={this.state.taskList} onClickDeleteTask={this.onClickDeleteTask}/>
                 {noTasksMessage}                
                 <NewTaskContainer onSubmitNewTask={this.onSubmitNewTask}/>
             </div>

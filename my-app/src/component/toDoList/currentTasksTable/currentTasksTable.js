@@ -11,7 +11,9 @@ class CurrentTasksTable extends React.Component {
         });
         let taskListItems = taskList.map((item)=>(
             <CurrentTask 
+            onClickDeleteTask={this.props.onClickDeleteTask}
             key={item.id} 
+            taskId={item.id}
             dateOfCreation={item.dateOfCreation} 
             taskText={item.taskText} 
             deadline={item.deadline}/>
