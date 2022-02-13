@@ -27,7 +27,6 @@ class CurrentTasksTable extends React.Component {
     };
 
     render() {
-        console.log("this.props.tasksArray",this.props.tasksArray);
         return (
             <table className="currentTasksTable">
                 <caption className="tableCaption">List of current tasks</caption>
