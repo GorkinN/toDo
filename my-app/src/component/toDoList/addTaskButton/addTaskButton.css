@@ -5,6 +5,7 @@
   border-radius: 10px;
   background-color: #004f9f;
   overflow: hidden;
+  min-width: 680px;
 }
 .currentTasksTable__head {
   border-top: none;
@@ -32,12 +33,11 @@
 }
 .add-task-button {
   position: relative;
-  padding: 10px 5px;
-  width: 100%;
+  padding: 10px 25px 10px 5px;
   background: #004f9f;
   border: none;
   border-radius: 10px;
-  max-width: 220px;
+  min-height: 3rem;
   box-shadow: inset 0 0 2px 1px white;
   cursor: pointer;
   color: white;

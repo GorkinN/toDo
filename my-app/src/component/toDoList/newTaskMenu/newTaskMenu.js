@@ -55,7 +55,8 @@ class NewTaskMenu extends React.Component {
                     <input 
                     className="new-task-menu__button" 
                     type="submit" 
-                    value="Add task" />
+                    value="Add new task" 
+                    />
 
                     <button 
                     className="new-task-menu__button" 

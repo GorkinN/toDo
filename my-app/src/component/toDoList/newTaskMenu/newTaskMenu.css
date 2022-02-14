@@ -5,6 +5,7 @@
   border-radius: 10px;
   background-color: #004f9f;
   overflow: hidden;
+  min-width: 680px;
 }
 .currentTasksTable__head {
   border-top: none;
@@ -15,18 +16,9 @@
 .currentTasksTable__head .currentTasksTable__head-cell:nth-last-child(1) {
   border-right: none;
 }
-.currentTasksTable__cell_task-text {
-  border: 1px dotted white;
-  padding: 5px;
-  max-width: 200px;
-  text-align: center;
-  vertical-align: center;
-  text-align: left;
-}
 .currentTasksTable__head-cell {
   border: 1px dotted white;
   padding: 5px;
-  max-width: 200px;
   text-align: center;
   vertical-align: center;
   font-size: 1.2rem;
@@ -39,9 +31,6 @@
   font-weight: 800;
   color: #004f9f;
 }
-.add-task-cell {
-  border-radius: 10px;
-}
 p {
   margin: 0;
   padding: 0;
@@ -53,7 +42,7 @@ textarea:focus {
   position: absolute;
   top: 0;
   background-color: #004f9f;
-  max-width: 400px;
+  min-width: 600px;
   padding: 5px 10px;
   overflow: hidden;
   border-radius: 10px;
