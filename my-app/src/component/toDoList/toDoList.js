@@ -53,11 +53,11 @@ class ToDoList extends React.Component {
         Push the button "Add new task" to make the first one
         </p> :null;
         return (
-            <div>
+            <section>
                 <CurrentTasksTable tasksArray={this.state.taskList} onClickDeleteTask={this.onClickDeleteTask}/>
                 {noTasksMessage}                
                 <NewTaskContainer onSubmitNewTask={this.onSubmitNewTask}/>
-            </div>
+            </section>
         );
     }
 }

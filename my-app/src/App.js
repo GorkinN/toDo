@@ -3,9 +3,15 @@ import './App.css';
 import {ToDoList} from "./component/toDoList/toDoList.js";
 function App() {
   return (
-  <div>
+  <main>
     <ToDoList />
-  </div>
+    <section id="doneList">
+      
+    </section>
+    <section id="wheelSection">
+
+    </section>
+  </main>
   );
 }
 
