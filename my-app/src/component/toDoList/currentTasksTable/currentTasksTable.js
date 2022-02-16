@@ -22,7 +22,6 @@ class CurrentTasksTable extends React.Component {
             <Fragment>
                 {taskListItems}
             </Fragment>
-            
             );       
     };
 
