@@ -18,7 +18,39 @@
 .currentTasksTable__head-cell {
   border: 1px dotted white;
   text-align: center;
+  vertical-align: center;
+  font-size: 1.2rem;
+  border-top: none;
+  color: white;
+}
+.tableCaption {
+  vertical-align: bottom;
   padding: 5px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #004f9f;
+}
+.completedTasksList {
+  box-shadow: 0 0 3px black;
+  border-collapse: collapse;
+  border-radius: 10px;
+  background-color: #004f9f;
+  overflow: hidden;
+  min-width: 680px;
+}
+.completedTasksList__head {
+  border-top: none;
+}
+.completedTasksList__head .completedTasksList__head-cell:nth-child(1) {
+  border-left: none;
+}
+.completedTasksList__head .completedTasksList__head-cell:nth-last-child(1) {
+  border-right: none;
+}
+.completedTasksList__head-cell {
+  border: 1px dotted white;
+  padding: 5px;
+  text-align: center;
   vertical-align: center;
   font-size: 1.2rem;
   border-top: none;

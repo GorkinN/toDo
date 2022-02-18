@@ -1,6 +1,5 @@
-@import "../common.less";
-
-.currentTasksTable {
+@import "../toDoList/currentTasksTable/currentTasksTable.less";
+.completedTasksList {
     box-shadow: 0 0 3px black;
     border-collapse: collapse;
     border-radius: 10px;
@@ -8,20 +7,20 @@
     overflow:hidden;
     min-width:680px;
 }
-.currentTasksTable__head {
+.completedTasksList__head {
     border-top:none;
 }
-.currentTasksTable__head .currentTasksTable__head-cell:nth-child(1){
+.completedTasksList__head .completedTasksList__head-cell:nth-child(1){
     border-left: none;
 }
-.currentTasksTable__head .currentTasksTable__head-cell:nth-last-child(1){
+.completedTasksList__head .completedTasksList__head-cell:nth-last-child(1){
     border-right: none;
 }
 
-.currentTasksTable__head-cell {
+.completedTasksList__head-cell {
     border:1px dotted white;
+    padding: 5px;
     text-align:center;
-    padding:5px;
     vertical-align: center;
     font-size: 1.2rem;
     border-top:none;

@@ -1,0 +1,26 @@
+@table-base-color: rgb(0, 79, 159);
+@font-size-base:1.1rem;
+@max-width-task-cell:200px;
+
+.button {
+    position:relative;
+    display:block;
+    padding:10px 10px;    
+    background:@table-base-color;
+    border:none;
+    border-radius:10px;
+    min-height:3rem;
+    box-shadow: inset 0 0 2px 1px white;
+    cursor: pointer;
+    color:white;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.button:active {
+    background-color: lighten(@table-base-color, 20%);
+    box-shadow: inset 0 0 2px 1px gray;
+}
+.button:hover {
+    box-shadow: inset 0 0 5px 2px @table-base-color;
+}

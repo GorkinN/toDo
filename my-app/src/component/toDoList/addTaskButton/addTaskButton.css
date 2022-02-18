@@ -1,49 +1,6 @@
-.currentTasksTable {
-  box-shadow: 0 0 3px black;
-  border-collapse: collapse;
-  margin: 10px;
-  border-radius: 10px;
-  background-color: #004f9f;
-  overflow: hidden;
-  min-width: 680px;
-}
-.currentTasksTable__head {
-  border-top: none;
-}
-.currentTasksTable__head .currentTasksTable__head-cell:nth-child(1) {
-  border-left: none;
-}
-.currentTasksTable__head .currentTasksTable__head-cell:nth-last-child(1) {
-  border-right: none;
-}
-.currentTasksTable__head-cell {
-  border: 1px dotted white;
-  padding: 5px;
-  text-align: center;
-  vertical-align: center;
-  font-size: 1.2rem;
-  border-top: none;
-  color: white;
-}
-.tableCaption {
-  padding: 5px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #004f9f;
-}
 .add-task-button {
-  position: relative;
-  padding: 10px 25px 10px 5px;
-  background: #004f9f;
-  border: none;
-  border-radius: 10px;
-  min-height: 3rem;
-  box-shadow: inset 0 0 2px 1px white;
-  cursor: pointer;
-  color: white;
-  font-size: 1.2rem;
-  text-align: left;
   text-indent: 20px;
+  padding: 10px 25px 10px 5px !important;
 }
 .add-task-button:before {
   content: "+";
@@ -52,11 +9,4 @@
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-}
-.add-task-button:active {
-  background-color: #0682ff;
-  box-shadow: inset 0 0 2px 1px gray;
-}
-.add-task-button:hover {
-  box-shadow: inset 0 0 5px 2px #004f9f;
 }

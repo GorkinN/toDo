@@ -5,12 +5,6 @@ function App() {
   return (
   <main>
     <ToDoList />
-    <section id="doneList">
-      
-    </section>
-    <section id="wheelSection">
-
-    </section>
   </main>
   );
 }

@@ -28,16 +28,18 @@ class CurrentTasksTable extends React.Component {
     render() {
         return (
             <table className="currentTasksTable">
-                <caption className="tableCaption">List of current tasks</caption>
-                    <tbody>
-                        <tr className="currentTasksTable__head">
-                            <th className="currentTasksTable__head-cell">Date of creation</th>
-                            <th className="currentTasksTable__head-cell">Task</th>
-                            <th className="currentTasksTable__head-cell">Deadline</th>
-                            <th className="currentTasksTable__head-cell">Execution</th>
-                        </tr>
-                        {this.showCurrentTasks(this.props.tasksArray)}
-                    </tbody>   
+                <caption className="tableCaption">
+                    List of current tasks
+                </caption>
+                <tbody>
+                    <tr className="currentTasksTable__head">
+                        <th className="currentTasksTable__head-cell">Date of creation</th>
+                        <th className="currentTasksTable__head-cell">Task</th>
+                        <th className="currentTasksTable__head-cell">Deadline</th>
+                        <th className="currentTasksTable__head-cell">Execution</th>
+                    </tr>
+                    {this.showCurrentTasks(this.props.tasksArray)}
+                </tbody>   
             </table>
         );
     }

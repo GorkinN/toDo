@@ -1,5 +1,6 @@
 import React from "react";
 import "./addTaskButton.css";
+import "../common.css";
 
 class AddTaskButton extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class AddTaskButton extends React.Component {
     }
     render() {
         return (
-        <button className='add-task-button' onClick = {this.handleClick}>
+        <button className='add-task-button button' onClick = {this.handleClick}>
             Add new task
         </button>
         );

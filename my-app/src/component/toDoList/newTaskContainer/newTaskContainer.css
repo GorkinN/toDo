@@ -1,48 +1,4 @@
-.currentTasksTable {
-  box-shadow: 0 0 3px black;
-  border-collapse: collapse;
-  margin: 20px;
-  border-radius: 10px;
-  background-color: #004f9f;
-  overflow: hidden;
-}
-.currentTasksTable__head {
-  border-top: none;
-}
-.currentTasksTable__head .currentTasksTable__head-cell:nth-child(1) {
-  border-left: none;
-}
-.currentTasksTable__head .currentTasksTable__head-cell:nth-last-child(1) {
-  border-right: none;
-}
-.currentTasksTable__cell_task-text {
-  border: 1px dotted white;
-  padding: 5px;
-  max-width: 100px;
-  text-align: center;
-  vertical-align: center;
-  text-align: left;
-}
-.currentTasksTable__head-cell {
-  border: 1px dotted white;
-  padding: 5px;
-  max-width: 100px;
-  text-align: center;
-  vertical-align: center;
-  font-size: 1.2rem;
-  border-top: none;
-  color: white;
-}
-.tableCaption {
-  padding: 5px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #004f9f;
-}
-.add-task-cell {
-  border-radius: 10px;
-}
 .newTaskContainer {
   position: relative;
-  margin: 5px 20px;
+  margin-top: 5px;
 }
