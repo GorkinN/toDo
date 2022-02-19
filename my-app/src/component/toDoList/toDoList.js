@@ -24,12 +24,26 @@ class ToDoList extends React.Component {
         let currentTaskList = stringsInArrayToObjects(this.state.taskList);
         for (let i=0; i<currentTaskList.length; i++) {
             if (currentTaskList[i].id === idToDelete) {
-                currentTaskList.splice(i, 1);
+                let completedTaskObj = currentTaskList.splice(i, 1);
+                this.addToCompletedList(completedTaskObj);
                 break;
             }
         }
         currentTaskList = objectsInArrayToStrings(currentTaskList);
         this.setState({ taskList:currentTaskList });
+    }
+
+    addToCompletedList(completedTaskObj) {
+        let additionalCompletedTask = JSON.stringify(completedTaskObj);
+        if (this.state.completedTaskList.length) {
+            this.setState(prevState => ({
+                completedTaskList: [...prevState.CompletedTasksList, additionalCompletedTask]
+            }));
+        } else {
+            this.setState({
+                completedTaskList: [additionalCompletedTask]
+            }); 
+        }
     }
     onSubmitNewTask() {
         let newTask = JSON.stringify(this.makeNewTaskObj());
@@ -69,19 +83,24 @@ class ToDoList extends React.Component {
         
         let isCompletedTasksVisible = this.state.isCompletedTasksVisible;
         let isThereAnyCompletedTasks = this.state.completedTaskList.length>0;
-        let completedTasksList = (isCompletedTasksVisible && isThereAnyCompletedTasks && <CompletedTasksList/>);
+        let completedTasksList = (isCompletedTasksVisible && isThereAnyCompletedTasks && <CompletedTasksList completedTaskList={this.state.completedTaskList}/>);
 
         return (
             <article className='tasksSection'>
                 <section className='toDoSection'>
-                    <CurrentTasksTable tasksArray={this.state.taskList} onClickDeleteTask={this.onClickDeleteTask}/>
+                    <CurrentTasksTable 
+                    tasksArray={this.state.taskList} onClickDeleteTask={this.onClickDeleteTask} 
+                    />
                     {noTasksMessage}    
                     <div className='controlBlock'>
                         <div className="controlBlock_item">
                             <NewTaskContainer  onSubmitNewTask={this.onSubmitNewTask}/>
                             </div>
                         <div className="controlBlock_item">
-                            <ShowCompletedTasksListButton onClickShowCompletedTasks={this.onClickShowCompletedTasks}/>
+                            <ShowCompletedTasksListButton 
+                            onClickShowCompletedTasks={this.onClickShowCompletedTasks}
+                            isShown={this.state.isCompletedTasksVisible}                    
+                            />
                         </div>
                     </div>
                 </section>
