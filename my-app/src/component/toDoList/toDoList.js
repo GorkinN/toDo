@@ -25,6 +25,7 @@ class ToDoList extends React.Component {
         for (let i=0; i<currentTaskList.length; i++) {
             if (currentTaskList[i].id === idToDelete) {
                 let completedTaskObj = currentTaskList.splice(i, 1);
+                console.log("completedTaskObj", completedTaskObj);
                 this.addToCompletedList(completedTaskObj);
                 break;
             }
@@ -34,22 +35,22 @@ class ToDoList extends React.Component {
     }
 
     addToCompletedList(completedTaskObj) {
-        let additionalCompletedTask = JSON.stringify(completedTaskObj);
-        if (this.state.completedTaskList.length) {
-            this.setState(prevState => ({
-                completedTaskList: [...prevState.CompletedTasksList, additionalCompletedTask]
-            }));
+        let task = JSON.stringify(completedTaskObj);
+        if (this.state.completedTaskList.length>0) {
+            this.setState((prevState) => {
+                return ({
+                    completedTaskList : [...prevState.completedTaskList, task],
+                });
+            });
         } else {
-            this.setState({
-                completedTaskList: [additionalCompletedTask]
-            }); 
+            this.setState({ completedTaskList: [task] }); 
         }
     }
     onSubmitNewTask() {
-        let newTask = JSON.stringify(this.makeNewTaskObj());
+        let task = JSON.stringify(this.makeNewTaskObj());
         this.setState((prevState) => {
                 return ({
-                    taskList : [...prevState.taskList, newTask],
+                    taskList : [...prevState.taskList, task],
                     taskId : prevState.taskId + 1 
                 });
             });
@@ -83,7 +84,11 @@ class ToDoList extends React.Component {
         
         let isCompletedTasksVisible = this.state.isCompletedTasksVisible;
         let isThereAnyCompletedTasks = this.state.completedTaskList.length>0;
-        let completedTasksList = (isCompletedTasksVisible && isThereAnyCompletedTasks && <CompletedTasksList completedTaskList={this.state.completedTaskList}/>);
+        let completedTasksList = (
+            isCompletedTasksVisible && 
+            isThereAnyCompletedTasks && 
+            <CompletedTasksList completedTaskList={this.state.completedTaskList}/>
+            );
 
         return (
             <article className='tasksSection'>
