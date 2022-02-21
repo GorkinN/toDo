@@ -1,6 +1,6 @@
 import React from "react";
 import "./currentTask.css";
-
+import {convertDateForUI} from "../../../utils/convertDateForUI";
 class CurrentTask extends React.Component {
     constructor(props){
         super(props);
@@ -11,6 +11,7 @@ class CurrentTask extends React.Component {
         this.props.onClickDeleteTask(this.props.taskId);
     }
     render() {
+        let deadlineDate = convertDateForUI(this.props.deadline);
         return (
             <tr className="currentTasksTable__row">
                     <td className="currentTasksTable__cell">
@@ -20,7 +21,7 @@ class CurrentTask extends React.Component {
                         {this.props.taskText}
                     </td>
                     <td className="currentTasksTable__cell">
-                        {this.props.deadline}
+                        {deadlineDate}
                     </td>
                     <td className="currentTasksTable__cell">
                         <button className="execution-button" onClick={this.handleClick}></button>

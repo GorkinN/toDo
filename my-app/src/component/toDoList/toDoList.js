@@ -19,12 +19,13 @@ class ToDoList extends React.Component {
         this.onSubmitNewTask = this.onSubmitNewTask.bind(this);
         this.onClickDeleteTask = this.onClickDeleteTask.bind(this);
         this.onClickShowCompletedTasks=this.onClickShowCompletedTasks.bind(this);
+        this.onClickTerminateTask = this.onClickTerminateTask.bind(this);
     }
     onClickDeleteTask(idToDelete){
         let currentTaskList = stringsInArrayToObjects(this.state.taskList);
         for (let i=0; i<currentTaskList.length; i++) {
             if (currentTaskList[i].id === idToDelete) {
-                let completedTaskObj = currentTaskList.splice(i, 1);
+                let completedTaskObj = currentTaskList.splice(i, 1)[0];
                 console.log("completedTaskObj", completedTaskObj);
                 this.addToCompletedList(completedTaskObj);
                 break;
@@ -33,7 +34,9 @@ class ToDoList extends React.Component {
         currentTaskList = objectsInArrayToStrings(currentTaskList);
         this.setState({ taskList:currentTaskList });
     }
-
+    onClickTerminateTask(id) {
+        
+    }
     addToCompletedList(completedTaskObj) {
         let task = JSON.stringify(completedTaskObj);
         if (this.state.completedTaskList.length>0) {
@@ -63,7 +66,6 @@ class ToDoList extends React.Component {
             isCompletedTasksVisible:!state.isCompletedTasksVisible
         }));
 
-        console.log(this.state.isCompletedTasksVisible)
     }
     makeNewTaskObj() {
         let newTaskText = document.getElementById("newTaskText");
@@ -72,7 +74,7 @@ class ToDoList extends React.Component {
         return {
             dateOfCreation : currentTime.toLocaleDateString(),
             taskText : newTaskText.value,
-            deadline : newTaskDeadline.value,
+            deadline : new Date(newTaskDeadline.value),
             id : this.state.taskId
         };        
     }

@@ -1,36 +1,36 @@
-import React, {useState} from 'react';
+import React, {Fragment} from 'react';
 import "./completedTasksList.css";
-import {objectsInArrayToStrings, stringsInArrayToObjects} from "../toDoList/../../utils/arrays_JSON";
+//import Completedtasklist from "./completedTaskList.jsx";
+import {CompletedTaskItem} from './completedTaskItem/completedTaskItem.jsx';
+import {stringsInArrayToObjects} from "../toDoList/../../utils/arrays_JSON";
+import {convertDateForUI} from "../../utils/convertDateForUI";
 
-
-function CompletedTasksList({completedTaskListArray}) {
-    let [taskList, setTaskList] = useState([completedTaskListArray]);
+function CompletedTasksList({completedTaskList}) {
     function makeCompletedTasksList(arrayOfCompletedTasks) {
         function evalDeadline(deadlineDate) {
-            let difference = deadlineDate-currentDate;
-            let isOnTime =  (deadlineDate-currentDate)>0;
-            if (isOnTime) {return "Yes"};
-            let differenceDaysCount = difference.getDate();
-            let msg = (differenceDaysCount>1)? `No (${differenceDaysCount} days late)`:`No (${differenceDaysCount} day late)`;
+            if (!deadlineDate) {return "ok"};
+            let deadline = new Date(deadlineDate);
+            let difference = deadline.getDate()-currentDate.getDate();
+            let isOnTime =  (deadline-currentDate)>0;
+            if (isOnTime) {return "ok"};
+            difference = Math.abs(difference);
+            let msg = (difference>1)? `${difference} days late`:`${difference} day late`;
             return msg;
         }
         function formCompletedTaskItem(taskObj) {
             let {deadline, taskText, id} = taskObj;
             return ({
-                completionDate:currentDate,
+                completionDate:convertDateForUI(currentDate),
                 task:taskText,
                 deadline:evalDeadline(deadline),
                 taskId:id
             });
         }
-        let taskArray = stringsInArrayToObjects(arrayOfCompletedTasks);
+        let initialTaskArray = stringsInArrayToObjects(arrayOfCompletedTasks);
         let currentDate = new Date();
-        let resultCompletedTasksArray = taskArray.map((taskObj)=>(taskObj));
-        
-        
+        return (initialTaskArray.map((item)=>(formCompletedTaskItem(item))));
     }
-    console.log("taskList",taskList);
-    console.log("completedTaskListArray",completedTaskListArray);
+        
     return (
         <table className="completedTasksList">
             <caption className="tableCaption">List of completed tasks</caption>
@@ -41,6 +41,11 @@ function CompletedTasksList({completedTaskListArray}) {
                         <th className="completedTasksList__head-cell">Met the deadline?</th>
                         <th className="completedTasksList__head-cell">Delete</th>
                     </tr>
+                    <Fragment>
+                        {makeCompletedTasksList(completedTaskList).map(
+                            (task)=>(<CompletedTaskItem key={task.taskId} taskItem={task}/>))
+                        }
+                    </Fragment>
                 </tbody>   
         </table>
     );
