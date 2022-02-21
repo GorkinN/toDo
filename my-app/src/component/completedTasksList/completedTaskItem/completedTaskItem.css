@@ -54,3 +54,31 @@
   overflow-wrap: break-word;
   min-width: 300px;
 }
+.terminate-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.terminate-button:before {
+  content: "+";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -30%;
+  left: 20%;
+  font-size: 4rem;
+  color: #750000;
+  transform: rotate(45deg);
+}
+.terminate-button:hover {
+  color: #00366c;
+  border-radius: 50%;
+  background-color: #750000;
+}
+.terminate-button:hover:before {
+  color: white;
+}

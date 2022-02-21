@@ -26,7 +26,6 @@ class ToDoList extends React.Component {
         for (let i=0; i<currentTaskList.length; i++) {
             if (currentTaskList[i].id === idToDelete) {
                 let completedTaskObj = currentTaskList.splice(i, 1)[0];
-                console.log("completedTaskObj", completedTaskObj);
                 this.addToCompletedList(completedTaskObj);
                 break;
             }
@@ -34,8 +33,16 @@ class ToDoList extends React.Component {
         currentTaskList = objectsInArrayToStrings(currentTaskList);
         this.setState({ taskList:currentTaskList });
     }
-    onClickTerminateTask(id) {
-        
+    onClickTerminateTask(idToKill) {
+        let currentCompletedTaskList = stringsInArrayToObjects(this.state.completedTaskList);
+        for (let i=0; i<currentCompletedTaskList.length; i++) {
+            if (currentCompletedTaskList[i].id === idToKill) {
+                currentCompletedTaskList.splice(i, 1);
+                break;
+            }
+        }
+        let resultCompletedTaskList = objectsInArrayToStrings(currentCompletedTaskList);
+        this.setState({ completedTaskList:resultCompletedTaskList });
     }
     addToCompletedList(completedTaskObj) {
         let task = JSON.stringify(completedTaskObj);
@@ -89,7 +96,7 @@ class ToDoList extends React.Component {
         let completedTasksList = (
             isCompletedTasksVisible && 
             isThereAnyCompletedTasks && 
-            <CompletedTasksList completedTaskList={this.state.completedTaskList}/>
+            <CompletedTasksList completedTaskList={this.state.completedTaskList} terminateTask={this.onClickTerminateTask}/>
             );
 
         return (

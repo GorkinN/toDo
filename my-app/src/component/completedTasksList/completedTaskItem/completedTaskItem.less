@@ -31,3 +31,34 @@
     overflow-wrap: break-word;
     min-width: 300px;
 }
+.terminate-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    height:2.5rem;
+    background: none;
+    border:none;
+    cursor: pointer;
+}
+.terminate-button:before {
+    content:"+";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:-30%;
+    left:20%;
+    font-size: 4rem;
+    color:rgb(117, 0, 0);
+    transform: rotate(45deg);
+}
+
+.terminate-button:hover {
+    color: darken(@table-base-color, 10%);
+    border-radius:50%;
+    background-color:rgb(117, 0, 0);
+    
+}
+
+.terminate-button:hover:before {
+    color:white;
+}

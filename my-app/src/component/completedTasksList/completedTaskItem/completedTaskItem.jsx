@@ -1,8 +1,8 @@
 import React from 'react';
 import "./completedTaskItem.css";
 
-const CompletedTaskItem = ({taskItem}) => {
-    let {completionDate, task, deadline} = taskItem;
+const CompletedTaskItem = ({taskItem, terminateTask}) => {
+    let {completionDate, task, deadline, taskId} = taskItem;
 
     return (
             <tr className="completedTasksList__row">
@@ -10,7 +10,7 @@ const CompletedTaskItem = ({taskItem}) => {
                 <td className="completedTasksList__cell_task-text">{task}</td>
                 <td className="completedTasksList__cell">{deadline}</td>
                 <td className="completedTasksList__cell">
-                    <button>X</button>
+                    <button className="terminate-button" onClick={()=>(terminateTask(taskId))}></button>
                 </td>
             </tr>
     );

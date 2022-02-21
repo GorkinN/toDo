@@ -5,7 +5,7 @@ import {CompletedTaskItem} from './completedTaskItem/completedTaskItem.jsx';
 import {stringsInArrayToObjects} from "../toDoList/../../utils/arrays_JSON";
 import {convertDateForUI} from "../../utils/convertDateForUI";
 
-function CompletedTasksList({completedTaskList}) {
+function CompletedTasksList({completedTaskList, terminateTask}) {
     function makeCompletedTasksList(arrayOfCompletedTasks) {
         function evalDeadline(deadlineDate) {
             if (!deadlineDate) {return "ok"};
@@ -43,7 +43,7 @@ function CompletedTasksList({completedTaskList}) {
                     </tr>
                     <Fragment>
                         {makeCompletedTasksList(completedTaskList).map(
-                            (task)=>(<CompletedTaskItem key={task.taskId} taskItem={task}/>))
+                            (task)=>(<CompletedTaskItem key={task.taskId} taskItem={task} terminateTask={terminateTask}/>))
                         }
                     </Fragment>
                 </tbody>   
