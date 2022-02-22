@@ -10,10 +10,9 @@ function CompletedTasksList({completedTaskList, terminateTask}) {
         function evalDeadline(deadlineDate) {
             if (!deadlineDate) {return "ok"};
             let deadline = new Date(deadlineDate);
-            let difference = deadline.getDate()-currentDate.getDate();
             let isOnTime =  (deadline-currentDate)>0;
             if (isOnTime) {return "ok"};
-            difference = Math.abs(difference);
+            let difference = Math.abs(deadline.getDate()-currentDate.getDate());
             let msg = (difference>1)? `${difference} days late`:`${difference} day late`;
             return msg;
         }
