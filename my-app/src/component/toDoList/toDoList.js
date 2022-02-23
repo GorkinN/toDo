@@ -21,6 +21,27 @@ class ToDoList extends React.Component {
         this.onClickShowCompletedTasks=this.onClickShowCompletedTasks.bind(this);
         this.onClickTerminateTask = this.onClickTerminateTask.bind(this);
     }
+    componentDidMount(){
+        
+        console.log(localStorage.getItem("taskList"));
+        /*if (localStorage.getItem("taskList")) {
+            this.setState({
+                taskList:localStorage.getItem("taskList")
+            });
+        }*/
+       /*if (localStorage.getItem("completedTaskList")) {
+            this.setState({
+                completedTaskList:localStorage.getItem("completedTaskList")
+            });
+        }*/
+    }
+    componentDidUpdate(){
+        console.log("tasklist", this.state.taskList)
+        localStorage.setItem("taskList", JSON.stringify(this.state.taskList));
+        console.log("taskList",localStorage.getItem("taskList"));
+        localStorage.setItem("completedTaskList", JSON.stringify(objectsInArrayToStrings(this.state.completedTaskList)));
+        console.log("completedTaskList",localStorage.getItem("completedTaskList"));
+    }
     onClickDeleteTask(idToDelete){
         let currentTaskList = stringsInArrayToObjects(this.state.taskList);
         for (let i=0; i<currentTaskList.length; i++) {
@@ -32,6 +53,7 @@ class ToDoList extends React.Component {
         }
         currentTaskList = objectsInArrayToStrings(currentTaskList);
         this.setState({ taskList:currentTaskList });
+
     }
     onClickTerminateTask(idToKill) {
         let currentCompletedTaskList = stringsInArrayToObjects(this.state.completedTaskList);
@@ -42,6 +64,7 @@ class ToDoList extends React.Component {
             }
         }
         let resultCompletedTaskList = objectsInArrayToStrings(currentCompletedTaskList);
+        console.log(resultCompletedTaskList);
         this.setState({ completedTaskList:resultCompletedTaskList });
     }
     addToCompletedList(completedTaskObj) {
@@ -64,6 +87,7 @@ class ToDoList extends React.Component {
                     taskId : prevState.taskId + 1 
                 });
             });
+        
     }
     onClickShowCompletedTasks(){
         let isThereAnyCompletedTasks = this.state.completedTaskList.length>0;
