@@ -25,16 +25,16 @@ class ToDoList extends React.Component {
         if (localStorage.getItem("taskList")) {
             this.setState({taskList:JSON.parse(localStorage.getItem("taskList"))});
         }
-       if (localStorage.getItem("completedTaskList")) {
-        this.setState({completedTaskList:JSON.parse(localStorage.getItem("completedTaskList"))});
+        if (localStorage.getItem("completedTaskList")) {
+             this.setState({completedTaskList:JSON.parse(localStorage.getItem("completedTaskList"))});
         }
     }
     componentDidUpdate(){
-        console.log("tasklist", this.state.taskList)
+        //console.log("tasklist", this.state.taskList)
         localStorage.setItem("taskList", JSON.stringify(this.state.taskList));
-        console.log("taskList",localStorage.getItem("taskList"));
+        //console.log("taskList",localStorage.getItem("taskList"));
         localStorage.setItem("completedTaskList", JSON.stringify(objectsInArrayToStrings(this.state.completedTaskList)));
-        console.log("completedTaskList",localStorage.getItem("completedTaskList"));
+        //console.log("completedTaskList",localStorage.getItem("completedTaskList"));
     }
     onClickDeleteTask(idToDelete){
         let currentTaskList = stringsInArrayToObjects(this.state.taskList);
