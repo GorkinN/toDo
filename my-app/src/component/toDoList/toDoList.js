@@ -22,8 +22,8 @@ class ToDoList extends React.Component {
         this.onClickTerminateTask = this.onClickTerminateTask.bind(this);
     }
     componentDidMount(){
-        
-        console.log(localStorage.getItem("taskList"));
+        this.setState({taskList:JSON.parse(localStorage.getItem("taskList"))});
+        this.setState({completedTaskList:JSON.parse(localStorage.getItem("completedTaskList"))});
         /*if (localStorage.getItem("taskList")) {
             this.setState({
                 taskList:localStorage.getItem("taskList")
